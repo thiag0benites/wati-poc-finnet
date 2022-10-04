@@ -2,26 +2,21 @@
 Resource    ../resources/dependencies.robot
 
 *** Keywords ***
-Le Arquivo
-    [Arguments]    &{data}
-    ${txt_obj}    Get File    files/input/${data}[txt_origem].txt
-    ${line}    Get Line    ${txt_obj}    0
-    Log To Console    ${line}
-
-valida ini_arquivo
+Valida ini_arquivo
     [Arguments]    &{data}
     &{json_obj}    Load JSON from file    layout/${data}[layout_origem].json
     # ${fields}    Get values from JSON    ${json_obj}    $.records[0].fields[0].description
     @{fields}    Get values from JSON    ${json_obj}    $.records[0].fields[*]
-    # Log To Console    ${fields}
-    # Log To Console    ${fields}
-    # ${size}    Get Length    ${fields}
-    # Log To Console    N Campos: ${size}
+
+    Valida Numero Campos    ${fields}    ${data}[ini_arquivo_num_campos]
+
+    ${row_ini_arquivo}    Ler ini_arquivo    ${data}[txt_origem]
 
     ${num_field}    Set Variable    ${1}
 
     FOR    ${field}    IN    @{fields}
-        Log To Console    Campo Nº ${num_field}: ${field.default}
-        # Log To Console    ${field.description}
-        ${num_field}    Evaluate    ${num_field} + 1
+        Valida Campos ini_arquivo    ${field}    ${row_ini_arquivo} 
+        # Log To Console    Campo Nº ${num_field}: ${field.default}
+        # # Log To Console    ${field.description}
+        # ${num_field}    Evaluate    ${num_field} + 1
     END

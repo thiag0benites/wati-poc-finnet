@@ -6,6 +6,8 @@ Resource    bd.robot
 #### Logs
 Resource    log.robot
 Resource    custom_keywords.robot
+Resource    layout.robot
+Resource    file.robot
 #### Pageobjects
 
 #### Components
