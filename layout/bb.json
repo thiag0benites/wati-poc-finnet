@@ -1,0 +1,4736 @@
+{
+  "_id": "5e4d88b0cc66e9cf454c089f",
+  "id": "3806",
+  "layout": "001-PAGAMENTO-API",
+  "description": "BANCO DO BRASIL PAGAMENTO - V7",
+  "type": "POSICIONAL",
+  "total_positions": "240",
+  "records": [
+    {
+      "code": "HARQ",
+      "prefix": "HA",
+      "type": "INI_ARQUIVO",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": null,
+          "default": "0000"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DE REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "9",
+          "length": "9",
+          "description": "USO EXCLUSIVO FEBRABAN / CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "18",
+          "length": "1",
+          "description": "TIPO DE INSCRICAO DA EMPRESA",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.type"
+        },
+        {
+          "start_position": "19",
+          "length": "14",
+          "description": "NUMERO DE INSCRICAO DA EMPRESA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.registered_number"
+        },
+        {
+          "start_position": "33",
+          "length": "9",
+          "description": "NUMERO DO CONVENIO",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.bank_agreement"
+        },
+        {
+          "start_position": "42",
+          "length": "4",
+          "description": "CODIGO DO CONVENIO",
+          "type": "N",
+          "format": null,
+          "default": "0126"
+        },
+        {
+          "start_position": "46",
+          "length": "5",
+          "description": "USO RESERVADO DO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "51",
+          "length": "2",
+          "description": "ARQUIVO DE TESTE",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "53",
+          "length": "5",
+          "description": "AGENCIA MANTENEDORA DA CONTA",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.bank_branch"
+        },
+        {
+          "start_position": "58",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AGENCIA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.bank_branch_identifier"
+        },
+        {
+          "start_position": "59",
+          "length": "12",
+          "description": "NUMERO DA CONTA CORRENTE",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.bank_account"
+        },
+        {
+          "start_position": "71",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA CONTA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.bank_account_identifier"
+        },
+        {
+          "start_position": "72",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AG/CONTA",
+          "type": "A",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "73",
+          "length": "30",
+          "description": "NOME DA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.name"
+        },
+        {
+          "start_position": "103",
+          "length": "30",
+          "description": "NOME DO BANCO",
+          "type": "A",
+          "format": null,
+          "default": "BANCO DO BRASIL S.A."
+        },
+        {
+          "start_position": "133",
+          "length": "10",
+          "description": "USO EXCLUSIVO FEBRABAN / CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "143",
+          "length": "1",
+          "description": "CODIGO REMESSA / RETORNO",
+          "type": "N",
+          "format": null,
+          "default": "1"
+        },
+        {
+          "start_position": "144",
+          "length": "8",
+          "description": "DATA DE GERACAO DO ARQUIVO",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_file_generation_date"
+        },
+        {
+          "start_position": "152",
+          "length": "6",
+          "description": "HORA DE GERACAO DO ARQUIVO",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_file_generation_time"
+        },
+        {
+          "start_position": "158",
+          "length": "6",
+          "description": "NUMERO SEQUENCIAL DO ARQUIVO",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_nsa"
+        },
+        {
+          "start_position": "164",
+          "length": "3",
+          "description": "NO DA VERSAO DO LAYOUT DO ARQUIVO",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_layout_version_ha"
+        },
+        {
+          "start_position": "167",
+          "length": "5",
+          "description": "DENSIDADE DE GRAVACAO DO ARQUIVO",
+          "type": "N",
+          "format": null,
+          "default": "00000"
+        },
+        {
+          "start_position": "172",
+          "length": "20",
+          "description": "PARA USO RESERVADO DO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "192",
+          "length": "20",
+          "description": "PARA USO RESERVADO DA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "212",
+          "length": "29",
+          "description": "PARA USO EXCLUSIVO FEBRABAN CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "code": "HLOT",
+      "prefix": "HL",
+      "type": "INI_LOTE",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DE REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "1"
+        },
+        {
+          "start_position": "9",
+          "length": "1",
+          "description": "TIPO DA OPERACAO",
+          "type": "A",
+          "format": null,
+          "default": "C"
+        },
+        {
+          "start_position": "10",
+          "length": "2",
+          "description": "TIPO DO SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_payment_product"
+        },
+        {
+          "start_position": "12",
+          "length": "2",
+          "description": "FORMA DE LANCAMENTO",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_payment_type"
+        },
+        {
+          "start_position": "14",
+          "length": "3",
+          "description": "N DA VERSAO DO LAYOUT DO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_layout_version"
+        },
+        {
+          "start_position": "17",
+          "length": "1",
+          "description": "USO EXCLUSIVO DA FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "18",
+          "length": "1",
+          "description": "TIPO DE INSCRICAO DA EMPRESA",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.type"
+        },
+        {
+          "start_position": "19",
+          "length": "14",
+          "description": "NUMERO DE INSCRICAO DA EMPRESA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.registered_number"
+        },
+        {
+          "start_position": "33",
+          "length": "9",
+          "description": "NUMERO DO CONVENIO",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.bank_agreement"
+        },
+        {
+          "start_position": "42",
+          "length": "4",
+          "description": "CODIGO DO CONVENIO",
+          "type": "N",
+          "format": null,
+          "default": "0126"
+        },
+        {
+          "start_position": "46",
+          "length": "5",
+          "description": "USO RESERVADO DO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "51",
+          "length": "2",
+          "description": "ARQUIVO DE TESTE",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "53",
+          "length": "5",
+          "description": "AGENCIA MANTENEDORA DA CONTA",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.bank_branch"
+        },
+        {
+          "start_position": "58",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AGENCIA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.bank_branch_identifier"
+        },
+        {
+          "start_position": "59",
+          "length": "12",
+          "description": "NUMERO DA CONTA CORRENTE",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.bank_account"
+        },
+        {
+          "start_position": "71",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA CONTA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.bank_account_identifier"
+        },
+        {
+          "start_position": "72",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AG/CONTA",
+          "type": "A",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "73",
+          "length": "30",
+          "description": "NOME DA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.name"
+        },
+        {
+          "start_position": "103",
+          "length": "40",
+          "description": "MENSAGEM",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "143",
+          "length": "30",
+          "description": "LOGRADOURO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.address"
+        },
+        {
+          "start_position": "173",
+          "length": "5",
+          "description": "NUMERO DO LOCAL",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.address_number"
+        },
+        {
+          "start_position": "178",
+          "length": "15",
+          "description": "COMPLEMENTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.address_complement"
+        },
+        {
+          "start_position": "193",
+          "length": "20",
+          "description": "CIDADE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.address_city"
+        },
+        {
+          "start_position": "213",
+          "length": "8",
+          "description": "CEP",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.address_zip_code"
+        },
+        {
+          "start_position": "221",
+          "length": "2",
+          "description": "ESTADO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.address_state"
+        },
+        {
+          "start_position": "223",
+          "length": "2",
+          "description": "INDICATIVO DA FORMA DE PAGAMENTO DO SERVICO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "225",
+          "length": "6",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "code": "FGTS",
+      "prefix": "W",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "W"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "NUMERO SEQ. REGISTRO COMPLEMENTAR",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "16",
+          "length": "1",
+          "description": "IDENTIFICA O USO DAS INFORMACOES 1 E 2",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "17",
+          "length": "80",
+          "description": "INFORMACAO COMPLEMENTAR 1",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "97",
+          "length": "80",
+          "description": "INFORMACAO COMPLEMENTAR 2",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "177",
+          "length": "2",
+          "description": "IDENTIFICADOR DE TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "01",
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "179",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "185",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "187",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "undefined,$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "201",
+          "length": "16",
+          "description": "CAMPO IDENTIFICADOR DO FGTS",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_identifier"
+        },
+        {
+          "start_position": "217",
+          "length": "9",
+          "description": "LACRE DO CONECTIVIDADE SOCIAL",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_fgts_connectivity_number"
+        },
+        {
+          "start_position": "226",
+          "length": "2",
+          "description": "DIGITO DO LACRE DO CONECTIVIDADE SOCIAL",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_fgts_connectivity_number_identifier"
+        },
+        {
+          "start_position": "228",
+          "length": "1",
+          "description": "USO CNAB/FEBRABAN",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "229",
+          "length": "2",
+          "description": "USO CNAB/FEBRABAN",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "W"
+        },
+        {
+          "position": "177",
+          "length": "2",
+          "value": "01"
+        }
+      ]
+    },
+    {
+      "code": "GRU",
+      "prefix": "WG",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DE DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "W"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "N. SEQUENCIAL REGISTRO COMPLMENTAR",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "16",
+          "length": "1",
+          "description": "COD USO INFORMACAO COMPLEMENTAR",
+          "type": "N",
+          "format": null,
+          "default": "9"
+        },
+        {
+          "start_position": "17",
+          "length": "20",
+          "description": "NUMERO DE REFERENCIA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "37",
+          "length": "6",
+          "description": "COMPETENCIA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "43",
+          "length": "14",
+          "description": "CNPJ/CPF DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "57",
+          "length": "14",
+          "description": "VALOR PRINCIPAL",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "71",
+          "length": "14",
+          "description": "DESCONTO/ABATIMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.rebate_amount"
+        },
+        {
+          "start_position": "85",
+          "length": "12",
+          "description": "BRANCOS",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "97",
+          "length": "14",
+          "description": "OUTRAS DEDUCOES",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.other_entities_amount"
+        },
+        {
+          "start_position": "111",
+          "length": "14",
+          "description": "MORA/MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.penalty_amount"
+        },
+        {
+          "start_position": "125",
+          "length": "14",
+          "description": "JUROS/ENCARGOS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.interest_amount"
+        },
+        {
+          "start_position": "139",
+          "length": "14",
+          "description": "OUTROS ACRESCIMOS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.other_addition_amount"
+        },
+        {
+          "start_position": "153",
+          "length": "24",
+          "description": "BRANCOS",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "177",
+          "length": "2",
+          "description": "IDENTIFICADOR DE TRIBUTO",
+          "type": "N",
+          "format": null,
+          "default": "88"
+        },
+        {
+          "start_position": "179",
+          "length": "50",
+          "description": "INFORMACAO COMPLEMENTAR",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.our_number"
+        },
+        {
+          "start_position": "229",
+          "length": "2",
+          "description": "USO BRANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGO DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "W"
+        },
+        {
+          "position": "177",
+          "length": "2",
+          "value": "88"
+        }
+      ]
+    },
+    {
+      "code": "GARE_DR",
+      "prefix": "GD",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR DO TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "23",
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "135",
+          "length": "8",
+          "description": "DATA DE VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.due_date"
+        },
+        {
+          "start_position": "143",
+          "length": "12",
+          "description": "INSCRICAO ESTADUAL / CODIGO DO MUNICIPIO / NUMERO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.state_registration"
+        },
+        {
+          "start_position": "155",
+          "length": "13",
+          "description": "DIVIDA ATIVA / N. ETIQUETA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_active_debt_number"
+        },
+        {
+          "start_position": "168",
+          "length": "6",
+          "description": "PERIODO DE EFERENCIA",
+          "type": "D",
+          "format": "MMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "174",
+          "length": "13",
+          "description": "NUMERO DA PARCELA / NOTIFICACAO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_installment_number"
+        },
+        {
+          "start_position": "187",
+          "length": "15",
+          "description": "VALOR DA RECEITA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "202",
+          "length": "14",
+          "description": "VALOR DOS JUROS / ENCARGOS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.interest_amount"
+        },
+        {
+          "start_position": "216",
+          "length": "14",
+          "description": "VALOR DA MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.penalty_amount"
+        },
+        {
+          "start_position": "230",
+          "length": "1",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "23"
+        }
+      ]
+    },
+    {
+      "code": "DPVAT",
+      "prefix": "DPV",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "27"
+        },
+        {
+          "start_position": "135",
+          "length": "4",
+          "description": "ANO BASE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_year"
+        },
+        {
+          "start_position": "139",
+          "length": "9",
+          "description": "CODIGO DO RENAVAM",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.renavam_9_digits"
+        },
+        {
+          "start_position": "148",
+          "length": "2",
+          "description": "UNIDADE DA FEDERACAO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_state"
+        },
+        {
+          "start_position": "150",
+          "length": "5",
+          "description": "CODIGO DO MUNICIPIO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_city_code"
+        },
+        {
+          "start_position": "155",
+          "length": "7",
+          "description": "PLACA DO VEICULO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.license_plate"
+        },
+        {
+          "start_position": "162",
+          "length": "1",
+          "description": "OPCAO DE PAGAMENTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.payment_option"
+        },
+        {
+          "start_position": "163",
+          "length": "12",
+          "description": "CODIGO DO RENAVAM",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.renavam_12_digits"
+        },
+        {
+          "start_position": "175",
+          "length": "56",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGO DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "27"
+        }
+      ]
+    },
+    {
+      "code": "GARE_ITCMD",
+      "prefix": "GI",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR DO TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "24"
+        },
+        {
+          "start_position": "135",
+          "length": "8",
+          "description": "DATA DE VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.due_date"
+        },
+        {
+          "start_position": "143",
+          "length": "12",
+          "description": "INSCRICAO ESTADUAL / CODIGO DO MUNICIPIO / NUMERO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.state_registration"
+        },
+        {
+          "start_position": "155",
+          "length": "13",
+          "description": "DIVIDA ATIVA / N. ETIQUETA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_active_debt_number"
+        },
+        {
+          "start_position": "168",
+          "length": "6",
+          "description": "PERIODO DE REFERENCIA",
+          "type": "D",
+          "format": "MMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "174",
+          "length": "13",
+          "description": "NUMERO DA PARCELA / NOTIFICACAO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_installment_number"
+        },
+        {
+          "start_position": "187",
+          "length": "15",
+          "description": "VALOR DA RECEITA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "202",
+          "length": "14",
+          "description": "VALOR DOS JUROS / ENCARGOS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.interest_amount"
+        },
+        {
+          "start_position": "216",
+          "length": "14",
+          "description": "VALOR DA MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.penalty_amount"
+        },
+        {
+          "start_position": "230",
+          "length": "1",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "24"
+        }
+      ]
+    },
+    {
+      "code": "LICENC",
+      "prefix": "LIC",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "26"
+        },
+        {
+          "start_position": "135",
+          "length": "4",
+          "description": "ANO BASE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_year"
+        },
+        {
+          "start_position": "139",
+          "length": "9",
+          "description": "CODIGO DO RENAVAM",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.renavam_9_digits"
+        },
+        {
+          "start_position": "148",
+          "length": "2",
+          "description": "UNIDADE DA FEDERACAO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_state"
+        },
+        {
+          "start_position": "150",
+          "length": "5",
+          "description": "CODIGO DO MUNICIPIO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_city_code"
+        },
+        {
+          "start_position": "155",
+          "length": "7",
+          "description": "PLACA DO VEICULO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.license_plate"
+        },
+        {
+          "start_position": "162",
+          "length": "1",
+          "description": "OPCAO DE PAGAMENTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_payment_option"
+        },
+        {
+          "start_position": "163",
+          "length": "1",
+          "description": "OPCAO DE RETIRADA DO CRVL",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.crlv_pickup_option"
+        },
+        {
+          "start_position": "164",
+          "length": "12",
+          "description": "CODIGO DO RENAVAM",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.renavam_12_digits"
+        },
+        {
+          "start_position": "176",
+          "length": "55",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGO DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "26"
+        }
+      ]
+    },
+    {
+      "code": "GARE_ICMS",
+      "prefix": "GC",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR DO TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "22"
+        },
+        {
+          "start_position": "135",
+          "length": "8",
+          "description": "DATA DE VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.due_date"
+        },
+        {
+          "start_position": "143",
+          "length": "12",
+          "description": "INSCRICAO ESTADUAL / CODIGO DO MUNICIPIO / NUMERO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.state_registration"
+        },
+        {
+          "start_position": "155",
+          "length": "13",
+          "description": "DIVIDA ATIVA / N. ETIQUETA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_active_debt_number"
+        },
+        {
+          "start_position": "168",
+          "length": "6",
+          "description": "PERIODO DE REFERENCIA",
+          "type": "D",
+          "format": "MMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "174",
+          "length": "13",
+          "description": "NUMERO DA PARCELA / NOTIFICACAO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_installment_number"
+        },
+        {
+          "start_position": "187",
+          "length": "15",
+          "description": "VALOR DA RECEITA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "202",
+          "length": "14",
+          "description": "VALOR DOS JUROS / ENCARGOS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.interest_amount"
+        },
+        {
+          "start_position": "216",
+          "length": "14",
+          "description": "VALOR DA MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.penalty_amount"
+        },
+        {
+          "start_position": "230",
+          "length": "1",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "22"
+        }
+      ]
+    },
+    {
+      "code": "DARFS",
+      "prefix": "DAS",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR DO TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "N",
+          "format": null,
+          "default": "6106",
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "18"
+        },
+        {
+          "start_position": "135",
+          "length": "8",
+          "description": "PERIODO DE APURACAO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "143",
+          "length": "15",
+          "description": "VALOR DA RECEITA BRUTA ACUMULADA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.gross_revenue"
+        },
+        {
+          "start_position": "158",
+          "length": "7",
+          "description": "PERCENTUAL SOBRE A RECEITA BRUTA ACUMULADA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.gross_revenue_percentage"
+        },
+        {
+          "start_position": "165",
+          "length": "15",
+          "description": "VALOR PRINCIPAL",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "180",
+          "length": "15",
+          "description": "VALOR DA MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.penalty_amount"
+        },
+        {
+          "start_position": "195",
+          "length": "15",
+          "description": "VALOR DOS JUROS / ENCARGOS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.interest_amount"
+        },
+        {
+          "start_position": "210",
+          "length": "21",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "18"
+        }
+      ]
+    },
+    {
+      "code": "DARF",
+      "prefix": "DA",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR DO TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "DENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "N",
+          "format": null,
+          "default": "16"
+        },
+        {
+          "start_position": "135",
+          "length": "8",
+          "description": "PERIODO DE APURACAO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "143",
+          "length": "17",
+          "description": "NUMERO DE REFERENCIA",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_identifier"
+        },
+        {
+          "start_position": "160",
+          "length": "15",
+          "description": "VALOR PRINCIPAL",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "175",
+          "length": "15",
+          "description": "VALOR DA MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.penalty_amount"
+        },
+        {
+          "start_position": "190",
+          "length": "15",
+          "description": "VALOR DOS JUROS / ENCARGOS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.interest_amount"
+        },
+        {
+          "start_position": "205",
+          "length": "8",
+          "description": "DATA DE VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.due_date"
+        },
+        {
+          "start_position": "213",
+          "length": "18",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "16"
+        }
+      ]
+    },
+    {
+      "code": "GPS",
+      "prefix": "GP",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR DO TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "N",
+          "format": null,
+          "default": "17"
+        },
+        {
+          "start_position": "135",
+          "length": "6",
+          "description": "MES E ANO DE COMPETENCIA",
+          "type": "D",
+          "format": "MMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "141",
+          "length": "15",
+          "description": "VALOR PREVISTO DO PAGAMENTO DO INSS",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "156",
+          "length": "15",
+          "description": "VALOR DE OUTRAS ENTIDADES",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.other_entities_amount"
+        },
+        {
+          "start_position": "171",
+          "length": "15",
+          "description": "ATUALIZACAO MONETARIA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.currency_restatement_amount"
+        },
+        {
+          "start_position": "186",
+          "length": "45",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "17"
+        }
+      ]
+    },
+    {
+      "code": "IPVA",
+      "prefix": "IPV",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "2",
+          "description": "CODIGO DE IDENTIFICACAO DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": "25"
+        },
+        {
+          "start_position": "135",
+          "length": "4",
+          "description": "ANO BASE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_year"
+        },
+        {
+          "start_position": "139",
+          "length": "9",
+          "description": "CODIGO DO RENAVAM",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.renavam_9_digits"
+        },
+        {
+          "start_position": "148",
+          "length": "2",
+          "description": "UNIDADE DA FEDERACAO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_state"
+        },
+        {
+          "start_position": "150",
+          "length": "5",
+          "description": "CODIGO DO MUNICIPIO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_city_code"
+        },
+        {
+          "start_position": "155",
+          "length": "7",
+          "description": "PLACA DO VEICULO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.license_plate"
+        },
+        {
+          "start_position": "162",
+          "length": "1",
+          "description": "OPCAO DE PAGAMENTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.payment_option"
+        },
+        {
+          "start_position": "163",
+          "length": "12",
+          "description": "CODIGO DO RENAVAM",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.renavam_12_digits"
+        },
+        {
+          "start_position": "175",
+          "length": "56",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGO DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        },
+        {
+          "position": "133",
+          "length": "2",
+          "value": "25"
+        }
+      ]
+    },
+    {
+      "code": "SEGJ52",
+      "prefix": "J52",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DE REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "COD. SEGMENTO DO REGISTRO DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "J"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DE MOVIMENTO REMESSA",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "2",
+          "description": "IDENTIFICACAO REGISTRO OPCIONAL",
+          "type": "N",
+          "format": null,
+          "default": "52"
+        },
+        {
+          "start_position": "20",
+          "length": "1",
+          "description": "TIPO DE INSCRICAO SACADO",
+          "type": "N",
+          "format": "0",
+          "default": null,
+          "json_path": "$.company.type"
+        },
+        {
+          "start_position": "21",
+          "length": "1",
+          "description": "ZERO",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "22",
+          "length": "14",
+          "description": "NUMERO DE INSCRICAO SACADO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.registered_number"
+        },
+        {
+          "start_position": "36",
+          "length": "40",
+          "description": "NOME SACADO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.company.name"
+        },
+        {
+          "start_position": "76",
+          "length": "1",
+          "description": "TIPO DE INSCRICAO CEDENTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.type"
+        },
+        {
+          "start_position": "77",
+          "length": "15",
+          "description": "NUMERO DE INSCRICAO CEDENTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.registered_number"
+        },
+        {
+          "start_position": "92",
+          "length": "40",
+          "description": "NOME CEDENTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.name"
+        },
+        {
+          "start_position": "132",
+          "length": "1",
+          "description": "TIPO DE INSCRICAO SACADOR",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "133",
+          "length": "15",
+          "description": "NUMERO DE INSCRICAO SACADOR",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "148",
+          "length": "40",
+          "description": "NOME SACADOR",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "188",
+          "length": "53",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "J"
+        },
+        {
+          "position": "18",
+          "length": "2",
+          "value": "52"
+        }
+      ]
+    },
+    {
+      "code": "SEGC",
+      "prefix": "C",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DO REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO DO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "C"
+        },
+        {
+          "start_position": "15",
+          "length": "3",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "18",
+          "length": "15",
+          "description": "VALOR DO IR",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "33",
+          "length": "15",
+          "description": "VALOR DO ISS",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "48",
+          "length": "15",
+          "description": "VALOR DO IOF",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "63",
+          "length": "15",
+          "description": "OUTRAS DEDUCOES",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "78",
+          "length": "15",
+          "description": "OUTROS ACRESCIMOS",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "93",
+          "length": "5",
+          "description": "AGENCIA DO FAVORECIDO",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "98",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AGENCIA",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "99",
+          "length": "12",
+          "description": "NUMERO DA CONTA CORRENTE",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "111",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA CONTA",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "112",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AGENCIA/CONTA",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "113",
+          "length": "15",
+          "description": "VALOR DO INSS",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "128",
+          "length": "20",
+          "description": "NUMERO DA CONTA PAGAMENTO CREDITADA",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "148",
+          "length": "93",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "C"
+        }
+      ]
+    },
+    {
+      "code": "SEGZ",
+      "prefix": "Z",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "O N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "Z"
+        },
+        {
+          "start_position": "15",
+          "length": "64",
+          "description": "AUTENTICACAO PARA ATENDER LEGISLACAO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.authentication_for_legislation"
+        },
+        {
+          "start_position": "79",
+          "length": "25",
+          "description": "AUTENTICACAO BANCARIA / PROTOCOLO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.bank_authentication"
+        },
+        {
+          "start_position": "104",
+          "length": "127",
+          "description": "USO CNAB/FEBRABEN",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "Z"
+        }
+      ]
+    },
+    {
+      "code": "SEGA",
+      "prefix": "A",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DE REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO DO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "A"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO P/ MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "3",
+          "description": "CODIGO DA CAMARA CENTRALIZADORA",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "21",
+          "length": "3",
+          "description": "CODIGO DO BANCO DO FAVORECIDO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.bank_identifier"
+        },
+        {
+          "start_position": "24",
+          "length": "5",
+          "description": "AG. MANTENEDORA DA CTA DO FAVOR.",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.bank_branch"
+        },
+        {
+          "start_position": "29",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AGENCIA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.bank_branch_identifier"
+        },
+        {
+          "start_position": "30",
+          "length": "12",
+          "description": "NUMERO DA CONTA CORRENTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.bank_account"
+        },
+        {
+          "start_position": "42",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA CONTA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.bank_account_identifier"
+        },
+        {
+          "start_position": "43",
+          "length": "1",
+          "description": "DIGITO VERIFICADOR DA AG/CONTA",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "44",
+          "length": "30",
+          "description": "NOME DO FAVORECIDO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.name"
+        },
+        {
+          "start_position": "74",
+          "length": "20",
+          "description": "N DO DOCUM. ATRIBUIDO P/ EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "94",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "102",
+          "length": "3",
+          "description": "TIPO DA MOEDA",
+          "type": "A",
+          "format": null,
+          "default": "BRL"
+        },
+        {
+          "start_position": "105",
+          "length": "15",
+          "description": "QUANTIDADE DA MOEDA",
+          "type": "N",
+          "format": null,
+          "default": "000000000000000"
+        },
+        {
+          "start_position": "120",
+          "length": "15",
+          "description": "VALOR DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "135",
+          "length": "20",
+          "description": "N DO DOCUM. ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "155",
+          "length": "8",
+          "description": "DATA REAL DA EFETIVACAO PAGTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null
+        },
+        {
+          "start_position": "163",
+          "length": "15",
+          "description": "VALOR REAL DA EFETIVACAO DO PAGTO",
+          "type": "N",
+          "format": "2",
+          "default": null
+        },
+        {
+          "start_position": "178",
+          "length": "40",
+          "description": "OUTRAS INFORMACOES",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "218",
+          "length": "2",
+          "description": "COMPL. TIPO SERVICO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "220",
+          "length": "5",
+          "description": "CODIGO FINALIDADE DA TED",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "225",
+          "length": "2",
+          "description": "COMPLEMENTO DE FINALIDADE PAGTO.",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "227",
+          "length": "3",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "230",
+          "length": "1",
+          "description": "AVISO AO FAVORECIDO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "A"
+        }
+      ]
+    },
+    {
+      "code": "DARJ",
+      "prefix": "DJ",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "N"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "38",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "58",
+          "length": "30",
+          "description": "NOME DO CONTRIBUINTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.name"
+        },
+        {
+          "start_position": "88",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "96",
+          "length": "15",
+          "description": "VALOR DO TOTAL DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "111",
+          "length": "6",
+          "description": "CODIGO DA RECEITA DO TRIBUTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_code"
+        },
+        {
+          "start_position": "117",
+          "length": "2",
+          "description": "TIPO DE IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.type"
+        },
+        {
+          "start_position": "119",
+          "length": "14",
+          "description": "IDENTIFICACAO DO CONTRIBUINTE",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].taxpayer.identifier"
+        },
+        {
+          "start_position": "133",
+          "length": "8",
+          "description": "INSCRICAO ESTADUAL / CODIGO DO MUNICIPIO / NUMERO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.state_registration"
+        },
+        {
+          "start_position": "141",
+          "length": "16",
+          "description": "NUMERO DO DOCUMENTO ORIGEM",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_document_source"
+        },
+        {
+          "start_position": "157",
+          "length": "15",
+          "description": "VALOR PRINCIPAL",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "172",
+          "length": "15",
+          "description": "VALOR DA ATUALIZACAO MONETARIA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.interest_amount"
+        },
+        {
+          "start_position": "187",
+          "length": "15",
+          "description": "VALOR DA MORA",
+          "type": "N",
+          "format": "2",
+          "default": null
+        },
+        {
+          "start_position": "202",
+          "length": "15",
+          "description": "VALOR DA MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.penalty_amount"
+        },
+        {
+          "start_position": "217",
+          "length": "8",
+          "description": "DATA DE VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.due_date"
+        },
+        {
+          "start_position": "225",
+          "length": "6",
+          "description": "PERIODO DE REFERENCIA OU NUMERO DA PARCELA",
+          "type": "D",
+          "format": "MMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.tax_calculation_period"
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "N"
+        }
+      ]
+    },
+    {
+      "code": "SEGB",
+      "prefix": "B",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DO REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO DO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "B"
+        },
+        {
+          "start_position": "15",
+          "length": "3",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "18",
+          "length": "1",
+          "description": "TIPO DE INSCRICAO DO FAVORECIDO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.type"
+        },
+        {
+          "start_position": "19",
+          "length": "14",
+          "description": "N DE INSCRICAO DO FAVORECIDO",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.registered_number"
+        },
+        {
+          "start_position": "33",
+          "length": "30",
+          "description": "LOGRADOURO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.address"
+        },
+        {
+          "start_position": "63",
+          "length": "5",
+          "description": "N DO LOCAL",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.address_number"
+        },
+        {
+          "start_position": "68",
+          "length": "15",
+          "description": "COMPLEMENTO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.address_complement"
+        },
+        {
+          "start_position": "83",
+          "length": "15",
+          "description": "BAIRRO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.address_neighborhood"
+        },
+        {
+          "start_position": "98",
+          "length": "20",
+          "description": "CIDADE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.address_city"
+        },
+        {
+          "start_position": "118",
+          "length": "8",
+          "description": "CEP",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.address_zip_code"
+        },
+        {
+          "start_position": "126",
+          "length": "2",
+          "description": "ESTADO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.address_state"
+        },
+        {
+          "start_position": "128",
+          "length": "8",
+          "description": "DATA DO VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "136",
+          "length": "15",
+          "description": "VALOR DO DOCUMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "151",
+          "length": "15",
+          "description": "VALOR DO ABATIMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payee.rebate_value"
+        },
+        {
+          "start_position": "166",
+          "length": "15",
+          "description": "VALOR DO DESCONTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payee.discount_value"
+        },
+        {
+          "start_position": "181",
+          "length": "15",
+          "description": "VALOR DA MORA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payee.late_payment_value"
+        },
+        {
+          "start_position": "196",
+          "length": "15",
+          "description": "VALOR DA MULTA",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payee.penalty_value"
+        },
+        {
+          "start_position": "211",
+          "length": "15",
+          "description": "CODIGO/DOCUMENTO DO FAVORECIDO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.payee_code"
+        },
+        {
+          "start_position": "226",
+          "length": "1",
+          "description": "AVISO AO FAVORECIDO",
+          "type": "N",
+          "format": null,
+          "default": "0",
+          "json_path": "$.payments.[*].payee.notification_to_payee"
+        },
+        {
+          "start_position": "227",
+          "length": "6",
+          "description": "USO EXCLUSIVO PARA O SIAPE",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "233",
+          "length": "8",
+          "description": "CODIGO ISPB",
+          "type": "N",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.ISPB_bank_id"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "B"
+        }
+      ]
+    },
+    {
+      "code": "SEGO",
+      "prefix": "O",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "REGISTRO DETALHE DE LOTE",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "O"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "44",
+          "description": "CODIGO DE BARRAS",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_bar_code",
+          "json_path": "$.payments.[*].payment.bar_code"
+        },
+        {
+          "start_position": "62",
+          "length": "30",
+          "description": "NOME DA CONCESSIONARIA / ORGAO PUBLICO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_concessionaire_name"
+        },
+        {
+          "start_position": "92",
+          "length": "8",
+          "description": "DATA NOMINAL DO VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.due_date"
+        },
+        {
+          "start_position": "100",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "108",
+          "length": "15",
+          "description": "VALOR DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "123",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "143",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.our_number"
+        },
+        {
+          "start_position": "163",
+          "length": "68",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "O"
+        }
+      ]
+    },
+    {
+      "code": "SEGJ",
+      "prefix": "J",
+      "type": "DATA_ROW",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO NO BANCO DA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DE REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "3"
+        },
+        {
+          "start_position": "9",
+          "length": "5",
+          "description": "N SEQUENCIAL DO REGISTRO NO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "14",
+          "length": "1",
+          "description": "CODIGO DE SEGMENTO NO REG. DETALHE",
+          "type": "A",
+          "format": null,
+          "default": "J"
+        },
+        {
+          "start_position": "15",
+          "length": "1",
+          "description": "TIPO DE MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "0"
+        },
+        {
+          "start_position": "16",
+          "length": "2",
+          "description": "CODIGO DA INSTRUCAO P/ MOVIMENTO",
+          "type": "N",
+          "format": null,
+          "default": "00"
+        },
+        {
+          "start_position": "18",
+          "length": "44",
+          "description": "CODIGO DE BARRAS",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_bar_code",
+          "json_path": "$.payments.[*].payment.bar_code"
+        },
+        {
+          "start_position": "62",
+          "length": "30",
+          "description": "NOME DO CEDENTE",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payee.name"
+        },
+        {
+          "start_position": "92",
+          "length": "8",
+          "description": "DATA DO VENCIMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.due_date"
+        },
+        {
+          "start_position": "100",
+          "length": "15",
+          "description": "VALOR DO TITULO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.original_amount"
+        },
+        {
+          "start_position": "115",
+          "length": "15",
+          "description": "VALOR DO DESCONTO + ABATIMENTO",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_discount_amount"
+        },
+        {
+          "start_position": "130",
+          "length": "15",
+          "description": "VALOR DA MORA + MULTA",
+          "type": "N",
+          "format": "custom",
+          "default": "_get_penalty_amount"
+        },
+        {
+          "start_position": "145",
+          "length": "8",
+          "description": "DATA DO PAGAMENTO",
+          "type": "D",
+          "format": "DDMMYYYY",
+          "default": null,
+          "json_path": "$.payments.[*].payment.date"
+        },
+        {
+          "start_position": "153",
+          "length": "15",
+          "description": "VALOR DO PAGAMENTO",
+          "type": "N",
+          "format": "2",
+          "default": null,
+          "json_path": "$.payments.[*].payment.amount"
+        },
+        {
+          "start_position": "168",
+          "length": "15",
+          "description": "QUANTIDADE DA MOEDA",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "183",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELA EMPRESA",
+          "type": "A",
+          "format": null,
+          "default": null,
+          "json_path": "$.payments.[*].payment.identifier"
+        },
+        {
+          "start_position": "203",
+          "length": "20",
+          "description": "N DO DOCTO ATRIBUIDO PELO BANCO",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "223",
+          "length": "2",
+          "description": "CODIGO DE MOEDA",
+          "type": "N",
+          "format": null,
+          "default": "09"
+        },
+        {
+          "start_position": "225",
+          "length": "6",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS P/ RETORNO",
+          "type": "A",
+          "format": "custom",
+          "default": "_get_events"
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "3"
+        },
+        {
+          "position": "14",
+          "length": "1",
+          "value": "J"
+        }
+      ]
+    },
+    {
+      "code": "TLOT",
+      "prefix": "TL",
+      "type": "FIM_LOTE",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DE REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "5"
+        },
+        {
+          "start_position": "9",
+          "length": "9",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "18",
+          "length": "6",
+          "description": "QUANTIDADE DE REGISTROS DO LOTE",
+          "type": "N",
+          "format": "custom",
+          "default": "_seqlot"
+        },
+        {
+          "start_position": "24",
+          "length": "18",
+          "description": "SOMATORIA DOS VALORES",
+          "type": "N",
+          "format": "custom",
+          "default": "_amountlot"
+        },
+        {
+          "start_position": "42",
+          "length": "18",
+          "description": "SOMATORIA DE QUANTIDADE DE MOEDAS",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "60",
+          "length": "6",
+          "description": "NUMERO AVISO DE DEBITO",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "66",
+          "length": "165",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "231",
+          "length": "10",
+          "description": "CODIGOS DAS OCORRENCIAS PARA RETORNO",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "code": "TARQ",
+      "prefix": "TA",
+      "type": "FIM_ARQUIVO",
+      "fields": [
+        {
+          "start_position": "1",
+          "length": "3",
+          "description": "CODIGO DO BANCO NA COMPENSACAO",
+          "type": "N",
+          "format": null,
+          "default": "001"
+        },
+        {
+          "start_position": "4",
+          "length": "4",
+          "description": "LOTE DE SERVICO",
+          "type": "N",
+          "format": null,
+          "default": "9999"
+        },
+        {
+          "start_position": "8",
+          "length": "1",
+          "description": "TIPO DE REGISTRO",
+          "type": "N",
+          "format": null,
+          "default": "9"
+        },
+        {
+          "start_position": "9",
+          "length": "9",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "18",
+          "length": "6",
+          "description": "QUANTIDADE DE LOTES DO ARQUIVO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countlot"
+        },
+        {
+          "start_position": "24",
+          "length": "6",
+          "description": "QUANTIDADE DE REGISTROS DO ARQUIVO",
+          "type": "N",
+          "format": "custom",
+          "default": "_countrec"
+        },
+        {
+          "start_position": "30",
+          "length": "6",
+          "description": "QTDE DE CONTAS P/ CONC. LOTES",
+          "type": "N",
+          "format": null,
+          "default": null
+        },
+        {
+          "start_position": "36",
+          "length": "205",
+          "description": "USO EXCLUSIVO FEBRABAN/CNAB",
+          "type": "A",
+          "format": null,
+          "default": null
+        }
+      ],
+      "rules": [
+        {
+          "position": "8",
+          "length": "1",
+          "value": "9"
+        }
+      ]
+    }
+  ]
+}

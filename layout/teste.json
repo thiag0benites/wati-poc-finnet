@@ -1,0 +1,18 @@
+{
+	"id": "00001",
+	"layout": "bradesco",
+	"records": [{
+		"fields": [
+			{
+				"start_position": "1",
+				"length": "3",
+				"description": "codigo"
+			},
+			{
+				"start_position": "4",
+				"length": "4",
+				"description": "lote"
+			}
+		]
+	}]
+}
