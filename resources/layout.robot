@@ -20,44 +20,28 @@ Valida Numero Campos
     END
 
 Valida Campos ini_arquivo
-    [Arguments]    ${layout_campo}    ${row_ini_arquivo}
+    [Documentation]    Percorre campos do ini_arquivo validando:
+    ...                - Tamnho do campo (length);
+    ...                - Valor padrão (default).
+    [Arguments]    ${layout_campos}    ${ini_arquivo}
 
-    IF    "${layout_campo.description}" == "CODIGO DO BANCO NA COMPENSACAO"
-        Log Console And Report    *** Início validação do campo CODIGO DO BANCO NA COMPENSACAO
-
+    FOR    ${layout_campo}    IN    @{layout_campos}
         ${start_position}    Set Variable    ${layout_campo.start_position}
-        ${start_position}    Evaluate    ${start_position} - 1
-        ${length}    Set Variable    ${layout_campo.length}
-        ${campo_1}    Get Substring    ${row_ini_arquivo}    ${start_position}    ${length}
 
-        IF    "${campo_1}" == "${layout_campo.default}"
-            Passed Log    *** Campo um validado com sucesso!
-        ELSE
-            Failure Log    *** Campo diferente do esperado! | Valor Obtido: ${campo_1} | Valor Esperado: ${layout_campo.default}
+        # IF    "${layout_campo.description}" == "CODIGO DO BANCO NA COMPENSACAO"    
+            ${start_position}    Evaluate    ${start_position} - 1
+        # END
+
+        ${length}    Evaluate    ${start_position} + ${layout_campo.length}
+        ${campo_ini_arquivo}    Get Substring    ${ini_arquivo}    ${start_position}    ${length}
+
+        IF    "${layout_campo.default}" == "None"
+            ${campo_ini_arquivo}    Set Variable    None 
         END
 
-        Log Console And Report    *** Fim validação do campo CODIGO DO BANCO NA COMPENSACAO
-
-    ELSE IF    "${layout_campo.description}" == "USO EXCLUSIVO FEBRABAN / CNAB"
-        Log Console And Report    *** Início validação do campo USO EXCLUSIVO FEBRABAN / CNAB
-
-        ${start_position}    Set Variable    ${layout_campo.start_position}
-        ${start_position}    Evaluate    ${start_position} - 1
-        ${length}    Set Variable    ${layout_campo.length}
-        ${campo_1}    Get Substring    ${row_ini_arquivo}    ${start_position}    ${length}
-
-        IF    "${campo_1}" == "${layout_campo.default}"
-            Passed Log    *** Campo um validado com sucesso!
+        IF    "${campo_ini_arquivo}" == "${layout_campo.default}"
+            Passed Log    *** ${layout_campo.description} validado com sucesso!
         ELSE
-            Failure Log    *** Campo diferente do esperado! | Valor Obtido: ${campo_1} | Valor Esperado: ${layout_campo.default}
+            Failure Log    *** ${layout_campo.description} diferente do esperado! | Valor Obtido: ${campo_ini_arquivo} | Valor Esperado: ${layout_campo.default}
         END
-
-        Log Console And Report    *** Fim validação do campo USO EXCLUSIVO FEBRABAN / CNAB
-    ELSE
-        Failure Log    *** Campo Description: ${layout_campo.description} não existe!
     END
-
-# Valida Itens Campo ini_arquivo
-#     [Arguments]    ${layout_campo}    ${row_ini_arquivo}
-    
-    
