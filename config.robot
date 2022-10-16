@@ -16,6 +16,7 @@ Library     RPA.JSON
 Library     SeleniumLibrary    #timeout=10
 ### Trabalha com stings
 Library     String
+Library     BuiltIn
 Library     DateTime
 ### Banco de dados
 Library     DatabaseLibrary
