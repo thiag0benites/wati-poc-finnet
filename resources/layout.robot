@@ -24,6 +24,7 @@ Valida Numero Campos
 Valida Campos ini_arquivo
     [Documentation]    Percorre campos do ini_arquivo validando:
     ...                - Tamanho do campo (length);
+    ...                - Formato do valor padrão (default);
     ...                - Valor padrão (default).
     [Arguments]    ${layout_campos}    ${ini_arquivo}
 
@@ -53,19 +54,33 @@ Valida Campos ini_arquivo
             Log Console And Report    LAYOUT: None
            
         ELSE IF    '${layout_campo.format}' == 'DDMMYYYY' or '${layout_campo.format}' == 'hhmmss'
-
+            # Verifica se o campo do ini_arquivo e numerico
+            ${e_numero}    ${valor}   Run Keyword And Ignore Error    Convert To Number    ${campo_ini_arquivo}
+            
+            # Captura tamanho dos campos FORMAT do layout e ini_arquivo
             ${tamanho_string_layout}    Get Length    ${layout_campo.format}
             ${tamanho_string_ini_arquivo}    Get Length    ${campo_ini_arquivo}
-
-            IF    ${tamanho_string_layout} == ${tamanho_string_ini_arquivo}
+ 
+            # Compara tamanho dos campos FORMAT do layout / ini_arquivo
+            IF    ${tamanho_string_layout} == ${tamanho_string_ini_arquivo} and '${e_numero}' == 'PASS'
                 Passed Log    FORMAT ${layout_campo.format} passou!
-            ELSE
+                Log Console And Report    LAYOUT: ${tamanho_string_layout} posicoes | E numerico
+                Log Console And Report    INI_ARQUIVO: ${tamanho_string_layout} posicoes | E numerico 
+
+            ELSE IF    ${tamanho_string_layout} == ${tamanho_string_ini_arquivo} and '${e_numero}' == 'FAIL' or_
+                       ${tamanho_string_layout} != ${tamanho_string_ini_arquivo} and '${e_numero}' == 'FAIL'
+
                 Failure Log    FORMAT ${layout_campo.format} falhou!
                 Log Console And Report    FORMAT ${layout_campo.format} falhou!
-            END
+                Log Console And Report    LAYOUT: ${tamanho_string_layout} posicoes | Nao e numerico
+                Log Console And Report    INI_ARQUIVO: ${tamanho_string_layout} posicoes | Nao e numerico
 
-            Log Console And Report    LAYOUT: ${tamanho_string_layout} posicoes
-            Log Console And Report    INI_ARQUIVO: ${tamanho_string_layout} posicoes
+            ELSE IF    ${tamanho_string_layout} != ${tamanho_string_ini_arquivo} and '${e_numero}' == 'PASS'
+                Failure Log    FORMAT ${layout_campo.format} falhou!
+                Log Console And Report    FORMAT ${layout_campo.format} falhou!
+                Log Console And Report    LAYOUT: ${tamanho_string_layout} posicoes | E numerico
+                Log Console And Report    INI_ARQUIVO: ${tamanho_string_layout} posicoes | E numerico
+            END
         
         ELSE
             Passed Log    FORMAT passou!
@@ -73,17 +88,24 @@ Valida Campos ini_arquivo
         END
 
         # Compara valor do campo default do layout com o valor do arquivo
-        #IF    "${campo_ini_arquivo}" == "${layout_campo.default}"
-        #    Passed Log    DEFAULT passou!
-        #    Log Console And Report    LAYOUT: ${layout_campo.default}
-        #    Log Console And Report    INI_ARQUIVO: ${campo_ini_arquivo}
-        #    #Passed Log    *** ${layout_campo.description} validado com sucesso!
-        #ELSE
-        #    Failure Log    DEFAULT falhou!
-        #    Log Console And Report    LAYOUT: ${layout_campo.default}
-        #    Log Console And Report    INI_ARQUIVO: ${campo_ini_arquivo}
-        #    # Failure Log    *** ${layout_campo.description} diferente do esperado! | Valor Obtido: ${campo_ini_arquivo} | Valor Esperado: ${layout_campo.default}
-        #END
+        IF    "${campo_ini_arquivo}" == "${layout_campo.default}"
+            Passed Log    DEFAULT passou!
+            Log Console And Report    LAYOUT: ${layout_campo.default}
+            Log Console And Report    INI_ARQUIVO: ${campo_ini_arquivo}
+            #Passed Log    *** ${layout_campo.description} validado com sucesso!
+        ELSE
+            Failure Log    DEFAULT falhou!
+            Log Console And Report    LAYOUT: ${layout_campo.default}
+            Log Console And Report    INI_ARQUIVO: ${campo_ini_arquivo}
+            # Failure Log    *** ${layout_campo.description} diferente do esperado! | Valor Obtido: ${campo_ini_arquivo} | Valor Esperado: ${layout_campo.default}
+        END
 
         ${num_campo}    Evaluate    ${num_campo} + 1
     END
+
+Valida Campos ini_lote
+    [Documentation]    Percorre campos do ini_lote validando:
+    ...                - Tamanho do campo (length);
+    ...                - Formato do valor padrão (default);
+    ...                - Valor padrão (default).
+    [Arguments]    ${layout_campos}    ${ini_lote}
