@@ -50,6 +50,7 @@ Valida Campos ini_arquivo
         # Valida tamanho do compo pelo formato definido no campo "format" do layout
         #IF    "${layout_campo.format}" == "DDMMYYYY" OR "${layout_campo.format}" == "hhmmss"
         IF    '${layout_campo.format}' == 'None'
+            Log Console And Report    ---
             Passed Log    FORMAT passou!
             Log Console And Report    LAYOUT: None
            
@@ -63,6 +64,7 @@ Valida Campos ini_arquivo
  
             # Compara tamanho dos campos FORMAT do layout / ini_arquivo
             IF    ${tamanho_string_layout} == ${tamanho_string_ini_arquivo} and '${e_numero}' == 'PASS'
+                Log Console And Report    ---
                 Passed Log    FORMAT ${layout_campo.format} passou!
                 Log Console And Report    LAYOUT: ${tamanho_string_layout} posicoes | E numerico
                 Log Console And Report    INI_ARQUIVO: ${tamanho_string_layout} posicoes | E numerico 
@@ -71,30 +73,36 @@ Valida Campos ini_arquivo
                        ${tamanho_string_layout} != ${tamanho_string_ini_arquivo} and '${e_numero}' == 'FAIL'
 
                 Failure Log    FORMAT ${layout_campo.format} falhou!
+                Log Console And Report    ---
                 Log Console And Report    FORMAT ${layout_campo.format} falhou!
                 Log Console And Report    LAYOUT: ${tamanho_string_layout} posicoes | Nao e numerico
                 Log Console And Report    INI_ARQUIVO: ${tamanho_string_layout} posicoes | Nao e numerico
 
             ELSE IF    ${tamanho_string_layout} != ${tamanho_string_ini_arquivo} and '${e_numero}' == 'PASS'
                 Failure Log    FORMAT ${layout_campo.format} falhou!
+                Log Console And Report    ---
                 Log Console And Report    FORMAT ${layout_campo.format} falhou!
                 Log Console And Report    LAYOUT: ${tamanho_string_layout} posicoes | E numerico
                 Log Console And Report    INI_ARQUIVO: ${tamanho_string_layout} posicoes | E numerico
             END
         
         ELSE
+            Log Console And Report    ---
             Passed Log    FORMAT passou!
             Log Console And Report    LAYOUT: ${layout_campo.format}
         END
 
         # Compara valor do campo default do layout com o valor do arquivo
         IF    "${campo_ini_arquivo}" == "${layout_campo.default}"
+            Log Console And Report    ---
             Passed Log    DEFAULT passou!
             Log Console And Report    LAYOUT: ${layout_campo.default}
             Log Console And Report    INI_ARQUIVO: ${campo_ini_arquivo}
             #Passed Log    *** ${layout_campo.description} validado com sucesso!
         ELSE
+            Log Console And Report    ---
             Failure Log    DEFAULT falhou!
+            Log Console And Report    DEFAULT falhou!
             Log Console And Report    LAYOUT: ${layout_campo.default}
             Log Console And Report    INI_ARQUIVO: ${campo_ini_arquivo}
             # Failure Log    *** ${layout_campo.description} diferente do esperado! | Valor Obtido: ${campo_ini_arquivo} | Valor Esperado: ${layout_campo.default}
